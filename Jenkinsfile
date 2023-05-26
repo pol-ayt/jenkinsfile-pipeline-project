@@ -1,15 +1,18 @@
 pipeline {
     agent any
     stages {
+        stage('build') {
+            steps {
+                echo 'Compiling the java source code'
+                sh 'javac Hello.java'
+            }
+        }
         stage('run') {
             steps {
-                echo "Clarusway to reinvent yourself!"
-                sh'''
-                python3 --version
-                python3 pipeline.py
-                echo 'that`s all she wrote!'
-                '''
+                echo 'Running the compiled java code.'
+                sh 'java Hello'
             }
+            
         }
     }
 }
