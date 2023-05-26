@@ -7,6 +7,7 @@ pipeline {
                 sh'''
                 python3 --version
                 python3 pipeline.py
+                echo 'that`s all she wrote!'
                 '''
             }
         }
